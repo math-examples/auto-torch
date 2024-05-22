@@ -26,11 +26,8 @@ jobs:
           output: ip2.png
           mode: page
           
-      - run: mkdir work && cd work
       - run: git clone --recursive https://github.com/pytorch/pytorch.git
-      - run: cd pytorch
-      - run: python3 tools/build_libtorch.py
-      - run: cd ..
+      - run: python3 pytorch/tools/build_libtorch.py
       
       - name: 'Tar files'
         run: tar -cvzf file.tar.gz *
