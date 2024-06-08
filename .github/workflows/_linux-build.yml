@@ -1,6 +1,10 @@
 name: linux-build
 
 on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
   workflow_call:
     inputs:
       build-environment:
@@ -82,7 +86,7 @@ on:
 jobs:
   build:
     # Don't run on forked repos
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'math-examples'
     runs-on: ${{ inputs.runner }}
     timeout-minutes: 240
     outputs:
