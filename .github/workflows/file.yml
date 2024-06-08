@@ -8,6 +8,7 @@ on:
 jobs:
   screenshots:
     runs-on: ubuntu-latest
+    if: false
     steps:
       - uses: karol-brejna-i/webpage-screenshot-action@v1
         with:
